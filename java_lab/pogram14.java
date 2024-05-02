@@ -9,11 +9,7 @@ class numbercheckexception extends Exception
 
 class pogram14
 {
-    static void validate(int n) throws numbercheckexception
-    {
-        if(n<0)
-            throw new numbercheckexception("negative number not possible");
-    }
+  
     public static void main(String[] args)
     {
         Scanner s = new Scanner(System.in);
@@ -26,13 +22,16 @@ class pogram14
             n=s.nextInt();
             try
             {
-                validate(n);
+                if(n<0)
+                {
+                    throw new numbercheckexception("not possible,it is a negetive number");
+                }
             }
             catch(numbercheckexception ex)
             {
                 System.out.println(ex);
             }
-            i++;
+            i+=1;
         }
 
     }
